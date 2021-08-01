@@ -13,7 +13,6 @@ function format(item) {
     return item
 }
 
-
 const giveawayDate = document.querySelector('#giveawayDate');
 const countDown = document.querySelectorAll('.countDown');
 const countDownElement = document.querySelector("#countDownElement");
