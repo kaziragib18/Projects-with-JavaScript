@@ -7,3 +7,9 @@ toggleOpen.addEventListener('click', function(e) {
 	toggleOpen.classList.add("hidden")
 	toggleClose.classList.remove("hidden")
 });
+
+toggleClose.addEventListener('click', function(e) {
+	navLink.classList.add("hidden")
+	toggleOpen.classList.remove("hidden")
+	toggleClose.classList.add("hidden")
+});
