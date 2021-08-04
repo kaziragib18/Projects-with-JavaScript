@@ -21,6 +21,28 @@
 			<button id="closeModal" class="text-lg text-gray-800 font-semibold border-2 px-4 py-1 rounded-full border-gray-800 focus:outline-none">Close</button>
 		</div>
 	</main>
-    
+
+	<script>
+		let modalBtn = document.querySelector('#modalBtn');
+		let closeModal = document.querySelector('#closeModal');
+		let modalContent = document.querySelector('#modalContent'); 
+		let body = document.querySelector('#body'); 
+
+		modalBtn.addEventListener('click', function(e) {
+			modalContent.classList.remove("hidden")
+			body.classList.remove("bg-gray-100")
+			body.classList.add("bg-black")
+			body.classList.add("bg-opacity-25")
+		});
+
+		closeModal.addEventListener('click', function(e) {
+			modalContent.classList.add("hidden")
+			body.classList.remove("bg-black")
+			body.classList.remove("bg-opacity-25")
+			body.classList.add("bg-gray-100")
+		});
+
+	</script>
+
 </body>
 </html>
