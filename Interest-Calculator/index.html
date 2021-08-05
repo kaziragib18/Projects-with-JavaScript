@@ -16,6 +16,8 @@
         <hr>
         <div class="container" id="simple-interest">
             <h3>Simple Interest</h3>
+            <!-- Formula of Simple Interest: 
+            Simple Interest is calculated using the following formula: SI = P × R × T, where P = Principal, R = Rate of Interest, and T = Time period. Here, the rate is given in percentage (r%) is written as r/100. And the principal is the sum of money that remains constant for every year in the case of simple interest. -->
             <p class="lead">A=i+(prt)</p>
             <form id="siForm">
                 <div class="form-group">
@@ -43,7 +45,55 @@
                     onClick="document.getElementById('siForm').reset()">
             </div>
         </div>
-    </div>>
+        <br>
+        <hr>
+        <br>
+        <div class="container" div="compound-interest ">
+            <h3>Compound Interest</h3>
+            <!-- Formula of Compound Interest:
+            A = Accrued amount (principal + interest)
+            P = Principal amount
+            r = Annual nominal interest rate as a decimal
+            R = Annual nominal interest rate as a percent
+            r = R/100
+            n = number of compounding periods per unit of time
+            t = time in decimal years; e.g., 6 months is calculated as 0.5 years. Divide your partial year number of months by 12 to get the decimal years.
+            -->
+            <p class="lead">A=p(1+(r/n))^(nt)</p>
+            <form id="ciForm">
+                <div class="form-group">
+                    <label for="principalCompound">Principal</label>
+                    <input type="text" class="form-control" id="principalCompound"
+                        placeholder="Enter amount without dollar sign">
+                </div>
+                <div class="form-group">
+                    <label for="interestCompound">Interest Rate</label>
+                    <input type="text" class="form-control" id="interestCompound" placeholder="Example: 12%">
+                </div>
+                <div class="form-group">
+                    <label for="timesCompounded">Times Compounded per Year</label>
+                    <input type="text" class="form-control" id="timesCompounded"
+                        placeholder="Example: 4 (means compounded quarterly)">
+                </div>
+                <div class="form-group">
+                    <label for="termCompound">Term of Loan</label>
+                    <input type="text" class="form-control" id="termCompound"
+                        placeholder="Example: 2 (must be in terms of years)">
+                </div>
+                <button type="submit" class="btn btn-primary" id="btnCompound"
+                    onclick="compoundInterest()">Submit</button>
+            </form>
+            <div>
+                <p class="lead mt-3" id="ciOutput-01"></p>
+                <p class="lead mb-3" id="ciOutput-02"></p>
+            </div>
+            <div class="text-center">
+                <input class="btn btn-secondary btn-lg" type="button" value="Reset"
+                    onClick="document.getElementById('ciForm').reset()">
+            </div>
+        </div>
+    </div>
+
     <script src="./main.js"></script>
 </body>
 
