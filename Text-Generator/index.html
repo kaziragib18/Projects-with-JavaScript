@@ -1,0 +1,32 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Generator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="bg-gray-200">
+    <main class="flex justify-center">
+        <div class="p-4 flex flex-col space-y-8">
+            <h1 class="uppercase font-semibold tracking-widest text-lg md:text-2xl text-center text-blue-900">Tired of
+                boring lorem ipsum 1-1000?</h1>
+            <form id="form" action="">
+                <div class="flex items-center justify-center">
+                    <label class="text-gray-800 font-semibold mr-2 tracking-widest text-xl" for="input">Length: </label>
+                    <input id="input" class="w-16 focus:outline-none px-2 py-2 rounded-l-full" type="number"
+                        placeholder="5">
+                    <button
+                        class="uppercase tracking-widest font-semibold rounded-r-full bg-blue-400 px-4 py-2 focus:outline-none hover:bg-blue-500">Generate</button>
+                </div>
+            </form>
+            <div id="body" class="max-w-md text-center text-gray-600 select-all">
+            </div>
+        </div>
+    </main>
+
+
+</body>
+
+</html>
