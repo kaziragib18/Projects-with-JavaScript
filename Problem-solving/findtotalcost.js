@@ -1,7 +1,7 @@
 // Calculate the Total sale of the three item with given price, quantity and conditions
 
 function totalSales(shirtQuantity, pantQuantity, shoeQuantity) {
-    if (perShirtQuantity < 1 && perPantQuantity < 1 && perShoeQuantity < 1) {
+    if (perShirtQuantity < 0 || perPantQuantity < 0 || perShoeQuantity < 0) {
         output = "Invalid input. Please state your quntity.";
         return output;
     }
