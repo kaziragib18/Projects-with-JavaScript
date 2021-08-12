@@ -53,3 +53,26 @@ const getReview = function(index){
 	bio.textContent = review.bio
 }
 
+// Next Button
+nextBtn.addEventListener('click', function(e) {
+	currentItem++;
+	if(currentItem>reviewList.length-1){
+		currentItem = 0;
+	}
+	getReview(currentItem)
+});
+
+// Prev Button
+preBtn.addEventListener('click', function(e) {
+	currentItem--;
+	if(currentItem<0){
+		currentItem = reviewList.length-1;
+	}
+	getReview(currentItem)
+});
+
+// Surprise Button
+surpriseBtn.addEventListener('click', function(e) {
+	let randomNumber = Math.floor(Math.random()*reviewList.length)
+	getReview(randomNumber)
+});
