@@ -32,3 +32,24 @@ let job = document.querySelector('#job');
 let bio = document.querySelector('#bio');
 
 
+// Get all button
+let preBtn = document.querySelector('#preBtn');
+let nextBtn = document.querySelector('#nextBtn');
+let surpriseBtn = document.querySelector('#surpriseBtn');
+
+
+// Load initial Item
+let currentItem = 0;
+
+window.addEventListener("DOMContentLoaded", function () {
+	getReview(currentItem)
+});
+
+const getReview = function(index){
+	let review = reviewList[index]
+	avatar.src = review.avatar
+	author.textContent = review.author
+	job.textContent = review.job
+	bio.textContent = review.bio
+}
+
