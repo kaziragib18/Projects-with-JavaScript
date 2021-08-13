@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling with Delete button </title>
+</head>
+
+<body>
+    <h2> Event Delete</h2>
+    <section>
+        <h2 id="secret-info"> Inportant text document </h2>
+        <input id="delete-confirm" type="text" placeholder="Please type delete ">
+        <button id="delete-btn" disabled>Delete</button>
+    </section>
+    <script>
+        document.getElementById('delete-btn').addEventListener('click', function () {
+            document.getElementById('secret-info').style.display = 'none';
+        });
+        // Input Focus
+        document.getElementById('delete-confirm').addEventListener('focus', function () {
+            document.body.style.backgroundColor = 'maroon';
+        });
+
+        //Focus blur
+        document.getElementById('delete-confirm').addEventListener('blur', function () {
+            document.body.style.backgroundColor = 'white';
+        });
+
+        //key down
+        document.getElementById('delete-confirm').addEventListener('blur', function () {
+            document.body.style.backgroundColor = 'white';
+        });
+
+        // document.getElementById('delete-btn').addEventListener('click', function () {
+        //     document.getElementById('secret-info').style.display = 'none';
+        // });
+    </script>
+</body>
+
+</html>
