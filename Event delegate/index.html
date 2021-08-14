@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubble</title>
+</head>
+
+<body>
+    <section id="section-container">
+        <h2> Event delegate</h2>
+        <ul id="item-container">
+            <li class="item">Lorem, ipsum.</li>
+            <li class="item">Incidunt, cum.</li>
+            <li class="item">Quaerat, accusamus.</li>
+            <li class="item">Dolor, libero!</li>
+            <li class="item">Vitae, quaerat.</li>
+            <li class="item">Debitis, necessitatibus!</li>
+        </ul>
+        <button id="add-item">Add item</button>
+    </section>
+    <script>
+        // document.getElementById('second-item').addEventListener('click', function(){
+        //     // event.stopImmediatePropagation();
+        // })
+
+        // document.getElementById('list-container').addEventListener('click', function(){
+
+        // })
+
+        // document.getElementById('section-container').addEventListener('click', function(){
+
+        // })
+
+        const items = document.getElementsByClassName('item');
+        for (const item of items) {
+            item.addEventListener('click', function (event) {
+                //    document.getElementById('item-container').removeChild(item);
+                event.target.parentNode.removeChild(event.target);
+            });
+        }
+        document.getElementById('add-item').addEventListener('click', function () {
+            const li = document.createElement('li');
+            li.innerText = 'Brand new items'
+            const parent = document.getElementById('item-container');
+            parent.appendChild(li);
+        })
+
+    </script>
+</body>
+
+</html>
