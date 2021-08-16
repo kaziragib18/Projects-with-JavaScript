@@ -28,7 +28,7 @@ function updateBalance(amount, isAdd) {
         balanceTotal.innerText = previousBalanceTotal + amount;
     }
     else {
-        balanceTotal.innerText = previousBalanceTotal - amount
+        balanceTotal.innerText = previousBalanceTotal - amount;
     }
 }
 
