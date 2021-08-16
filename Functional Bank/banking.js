@@ -17,13 +17,19 @@ function updateTotalField(totalFieldId, amount) {
     totalElement.innerText = previousTotal + amount;
 }
 
-function updateBalance(amount, isAdd) {
+function getCurrentBalance() {
     //Update Balance after deposit & withdraw
     const balanceTotal = document.getElementById('balance-total');
     //converting balance input string to number
     const balanceTotalText = balanceTotal.innerText;
     const previousBalanceTotal = parseFloat(balanceTotalText);
+    return previousBalanceTotal;
+}
+
+function updateBalance(amount, isAdd) {
+    const balanceTotal = document.getElementById('balance-total');
     //Update Total balance 
+    const previousBalanceTotal = getCurrentBalance();
     if (isAdd == true) {
         balanceTotal.innerText = previousBalanceTotal + amount;
     }
@@ -36,19 +42,25 @@ function updateBalance(amount, isAdd) {
 document.getElementById('deposit-btn').addEventListener('click', function () {
     const depositAmount = getInputValue('deposit-input');
 
-    updateTotalField('deposit-total', depositAmount);
-
-    updateBalance(depositAmount, true);
+    // Error handling for negative value
+    if (depositAmount > 0) {
+        updateTotalField('deposit-total', depositAmount);
+        updateBalance(depositAmount, true);
+    }
 });
 
 //handle Withdraw button event
 document.getElementById('withdraw-btn').addEventListener('click', function () {
     //get the amount withdrawn
-    const withdawAmount = getInputValue('withdraw-input')
-
-    updateTotalField('withdraw-total', withdawAmount);
-
-    //Update Balance after Withdaw
-    updateBalance(withdawAmount, false);
-
-})
+    const withdawAmount = getInputValue('withdraw-input');
+    const currentBalance = getCurrentBalance();
+    // Error handling for negative value
+    if (withdawAmount > 0 && withdawAmount < currentBalance) {
+        updateTotalField('withdraw-total', withdawAmount);
+        //Update Balance after Withdaw
+        updateBalance(withdawAmount, false);
+    }
+    if (withdawAmount > currentBalance) {
+        console.log('Insufficient Balace!');
+    }
+});
