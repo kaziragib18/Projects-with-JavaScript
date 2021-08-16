@@ -8,7 +8,7 @@ function getInputValue(inputId) {
     return amountValue;
 }
 
-function updateTotalField(totalFieldId,amount){
+function updateTotalField(totalFieldId, amount) {
     const totalElement = document.getElementById(totalFieldId);
     //converting deposit input string to number
     const totalText = totalElement.innerText;
@@ -17,14 +17,19 @@ function updateTotalField(totalFieldId,amount){
     totalElement.innerText = previousTotal + amount;
 }
 
-function updateBalance(depositAmount){
+function updateBalance(amount, isAdd) {
     //Update Balance after deposit & withdraw
     const balanceTotal = document.getElementById('balance-total');
     //converting balance input string to number
     const balanceTotalText = balanceTotal.innerText;
     const previousBalanceTotal = parseFloat(balanceTotalText);
     //Update Total balance 
-    balanceTotal.innerText = previousBalanceTotal + depositAmount;
+    if (isAdd == true) {
+        balanceTotal.innerText = previousBalanceTotal + amount;
+    }
+    else {
+        balanceTotal.innerText = previousBalanceTotal - amount
+    }
 }
 
 // handle deposit button event
@@ -33,16 +38,7 @@ document.getElementById('deposit-btn').addEventListener('click', function () {
 
     updateTotalField('deposit-total', depositAmount);
 
-    // //Update Balance after deposit
-    // const balanceTotal = document.getElementById('balance-total');
-    // //converting balance input string to number
-    // const balanceTotalText = balanceTotal.innerText;
-    // const previousBalanceTotal = parseFloat(balanceTotalText);
-
-    // //Update Total balance 
-    // balanceTotal.innerText = previousBalanceTotal + depositAmount;
-
-    updateBalance(depositAmount);
+    updateBalance(depositAmount, true);
 });
 
 //handle Withdraw button event
@@ -53,13 +49,6 @@ document.getElementById('withdraw-btn').addEventListener('click', function () {
     updateTotalField('withdraw-total', withdawAmount);
 
     //Update Balance after Withdaw
-    const balanceTotal = document.getElementById('balance-total');
-
-    //converting balance input string to number
-    const balanceTotalText = balanceTotal.innerText;
-    const previousBalanceTotal = parseFloat(balanceTotalText);
-
-    //Update Total balance
-    balanceTotal.innerText = previousBalanceTotal - withdrawAmount;
+    updateBalance(withdawAmount, false);
 
 })
