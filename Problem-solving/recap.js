@@ -13,8 +13,6 @@ let myMax = findMax(myArr);
 console.log("So the maximum number is:");
 console.log(myMax);
 
-
-
 //Snallest number in an array
 function findMin(arr) {
     let min = arr[0];
