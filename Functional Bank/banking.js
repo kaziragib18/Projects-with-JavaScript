@@ -61,6 +61,8 @@ document.getElementById('withdraw-btn').addEventListener('click', function () {
         updateBalance(withdawAmount, false);
     }
     if (withdawAmount > currentBalance) {
-        console.log('Insufficient Balace!');
+        const errorMessage = document.getElementById('error-balance')
+        errorMessage.style.display = 'block';
+        
     }
 });
