@@ -103,3 +103,4 @@ function updateTotal() {
     const GrandTotal = memoryExtraCost + productPrice + storageExtraCost + shippingCharge;
     newTotal.innerText = GrandTotal;
 }
+
