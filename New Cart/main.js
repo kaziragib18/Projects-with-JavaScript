@@ -108,16 +108,15 @@ promoApply.addEventListener('click', function () {
     let totalValue = Number(bottomTotal.innerText);
     let finalTotal = Number(newTotal.innerText);
 
-    if (promoValue == 'stevekaku' || 'STEVEKAKU') {
+    if (promoValue == 'stevekaku' || promoValue == 'STEVEKAKU') {
         totalValue = totalValue * .20;
         totalValue = finalTotal - totalValue;
         bottomTotal.innerText = totalValue;
         addPromo.style.display = 'none';
         accessory.style.display = 'none';
-
     }
-    else{
-        errorMessege.innerText ='Invalid promo code!';
+    else {
+        errorMessege.innerText = 'Invalid promo code! Correct order e.g: promo or PROMO';
     }
 })
 
