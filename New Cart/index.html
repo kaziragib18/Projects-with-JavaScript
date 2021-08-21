@@ -42,47 +42,49 @@
                         Neural Engine for up to 11x faster machine learning. And up to 20 hours of battery life — the
                         longest of any Mac ever.
                     </p>
-                    <!-- select button for Memory  -->
-                    <div class="pt-10">
-                        <h2 class="font-bold mb-2">Memory</h2>
-                        <button id="memory-8gb"
-                            class="p-2 border border-gray-200 shadow hover:shadow-lg rounded hover:bg-gray-400">
-                            8GB unified memory
-                        </button>
-                        <button id="memory-16gb"
-                            class="p-2 border border-gray-200 shadow hover:shadow-lg rounded hover:bg-gray-400">
-                            16GB unified memory
-                        </button>
-                    </div>
+                    <div id="accessory" >
+                        <!-- select button for Memory  -->
+                        <div class="pt-10">
+                            <h2 class="font-bold mb-2">Memory</h2>
+                            <button id="memory-8gb"
+                                class="p-2 border border-gray-200 shadow hover:shadow-lg rounded hover:bg-gray-400">
+                                8GB unified memory
+                            </button>
+                            <button id="memory-16gb"
+                                class="p-2 border border-gray-200 shadow hover:shadow-lg rounded hover:bg-gray-400">
+                                16GB unified memory
+                            </button>
+                        </div>
 
-                    <!-- select button for Memory  -->
-                    <div class="pt-10">
-                        <h2 class="font-bold mb-2">Storage</h2>
-                        <button id="storage-256gb"
-                            class="p-2 border border-gray-200 shadow hover:shadow-lg rounded  hover:bg-gray-400">
-                            256GB SSD storage
-                        </button>
-                        <button id="storage-512gb" class="p-2 border border-gray-200 shadow hover:shadow-lg rounded
+                        <!-- select button for Memory  -->
+                        <div class="pt-10">
+                            <h2 class="font-bold mb-2">Storage</h2>
+                            <button id="storage-256gb"
+                                class="p-2 border border-gray-200 shadow hover:shadow-lg rounded  hover:bg-gray-400">
+                                256GB SSD storage
+                            </button>
+                            <button id="storage-512gb" class="p-2 border border-gray-200 shadow hover:shadow-lg rounded
                         hover:bg-gray-400">
-                            512GB SSD storage
-                        </button>
-                        <button id="storage-1tb" class="p-2 border border-gray-200 shadow hover:shadow-lg rounded
+                                512GB SSD storage
+                            </button>
+                            <button id="storage-1tb" class="p-2 border border-gray-200 shadow hover:shadow-lg rounded
                         hover:bg-gray-400">
-                            1TB SSD storage
-                        </button>
-                    </div>
+                                1TB SSD storage
+                            </button>
+                        </div>
 
-                    <!-- select button for delivery -->
-                    <div class="pt-10">
-                        <h2 class="font-bold mb-2">Choose your delivery option</h2>
-                        <button id="free"
-                            class="p-2 border border-gray-200 shadow hover:shadow-lg rounded hover:bg-gray-400">
-                            Friday, Aug 25 Free Prime delivery
-                        </button>
-                        <button id="fast"
-                            class="p-2 border border-gray-200 shadow hover:shadow-lg rounded hover:bg-gray-400">
-                            Friday, Aug 21 Delivery 20$
-                        </button>
+                        <!-- select button for delivery -->
+                        <div class="pt-10">
+                            <h2 class="font-bold mb-2">Choose your delivery option</h2>
+                            <button id="free"
+                                class="p-2 border border-gray-200 shadow hover:shadow-lg rounded hover:bg-gray-400">
+                                Friday, Aug 25 Free Prime delivery
+                            </button>
+                            <button id="fast"
+                                class="p-2 border border-gray-200 shadow hover:shadow-lg rounded hover:bg-gray-400">
+                                Friday, Aug 21 Delivery 20$
+                            </button>
+                        </div>
                     </div>
 
                     <div class="font-bold text-sm-200 py-2 mt-16">
@@ -106,12 +108,19 @@
                     <div class="font-bold text-sm-200 py-2 divide-y-4 divide-black divide-opacity-25 ">
                         Total Price<span class="ml-44" id="total">1299</span>$
                     </div>
-                    <h2 class="mt-5 text-sm-100 font-bold">Add promo code</h2>
-                    <input class="border-black shadow rounded px-5 py-1 mt-2" placeholder="Enter promo code">
-                    <button
-                        class="px-6 py-1 text-sm-200 text-white bg-red-500 border border-purple-200 mt-2 mb-14 shadow rounded hover:shadow-xl hover:bg-gray-400">
-                        Apply
-                    </button>
+
+                    <div id="add-promo">
+                        <!-- promo input -->
+                        <h2 class="mt-5 text-sm-100 font-bold">Add promo code</h2>
+                        <input id="promo-text" class="border-black shadow rounded px-5 py-1 mt-2"
+                            placeholder="Enter promo code">
+                        <button id="promo-apply"
+                            class="px-6 py-1 text-sm-200 text-white bg-red-500 border border-purple-200 mt-2 mb-14 shadow rounded hover:shadow-xl hover:bg-gray-400">
+                            Apply
+                        </button>
+                        <p id="error" class="text-xl font-bold text-red-500 p-10 mb-4"></p>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -119,7 +128,7 @@
             <hr style="height:2px; width:50%;border-width:0;color:rgb(82, 79, 79);background-color:gray">
         </div>
         <div class="font-bold text-3xl py-2 mb-12 text-center divide-y-4 divide-black divide-opacity-25 ">
-            Total: $<span class="" id="total-bottom">0</span>
+            Total: $<span class="" id="total-bottom">1299</span>
         </div>
     </main>
     <!-- js file -->

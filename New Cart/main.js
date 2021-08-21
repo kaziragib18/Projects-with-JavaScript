@@ -76,6 +76,15 @@ const fast = document.getElementById('fast');
 const shippingField = document.getElementById('shipping');
 const newTotal = document.getElementById('total');
 
+const bottomTotal = document.getElementById('total-bottom');
+
+const promoText = document.getElementById('promo-text');
+const promoApply = document.getElementById('promo-apply');
+const addPromo = document.getElementById('add-promo');
+const errorMessege = document.getElementById('error');
+const accessory = document.getElementById('accessory');
+
+
 //delivery options highlighted with select border
 free.addEventListener('click', function () {
     if (!isContain(free)) {
@@ -94,7 +103,25 @@ fast.addEventListener('click', function () {
     updateTotal();
 });
 
-// new Update Total
+promoApply.addEventListener('click', function () {
+    let promoValue = promoText.value;
+    let totalValue = Number(bottomTotal.innerText);
+    let finalTotal = Number(newTotal.innerText);
+
+    if (promoValue == 'stevekaku' || 'STEVEKAKU') {
+        totalValue = totalValue * .20;
+        totalValue = finalTotal - totalValue;
+        bottomTotal.innerText = totalValue;
+        addPromo.style.display = 'none';
+        accessory.style.display = 'none';
+
+    }
+    else{
+        errorMessege.innerText ='Invalid promo code!';
+    }
+})
+
+// New Update Total
 function updateTotal() {
     const storageExtraCost = Number(storageField.innerText);
     const memoryExtraCost = Number(memoryField.innerText);
@@ -102,5 +129,7 @@ function updateTotal() {
     const productPrice = Number(price.innerText);
     const GrandTotal = memoryExtraCost + productPrice + storageExtraCost + shippingCharge;
     newTotal.innerText = GrandTotal;
+    bottomTotal.innerText = GrandTotal;
 }
+
 

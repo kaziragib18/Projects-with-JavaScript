@@ -63,6 +63,5 @@ document.getElementById('withdraw-btn').addEventListener('click', function () {
     if (withdawAmount > currentBalance) {
         const errorMessage = document.getElementById('error-balance')
         errorMessage.style.display = 'block';
-        
     }
 });
