@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies with api</title>
     <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
+
 <body>
-    <h2 class="text-center m-5">Welcome To Our Movie Theatre</h2>
+    <h2 class="text-center m-3 pt-4 fs-2 fst-italic font-monospace">Welcome To Our Movie Theatre</h2>
     <div id="container">
+        <div class="border border-primary border-3 m-4 p-4">
+            <h3 class="fs-5 font-monospace" >Movie Description</h3>
+            <div id="movie-details">
+            </div>
+        </div>
+        
+        <div class="text-center p-4" id="load-spinner">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden"></span>
+            </div>
+        </div>
+
         <div class="row" id="movie-container">
-    
+
         </div>
     </div>
 
     <script src="main.js"></script>
 </body>
+
 </html>
