@@ -11,6 +11,7 @@ const setMovies = (movies) => {
         // console.log(post.title)
         const movieDiv = document.createElement('div')
         movieDiv.classList.add('col-md-3')
+        //concat image poster path api
         const imageUrl = "https://image.tmdb.org/t/p/original" + movie.poster_path
         // console.log(imageUrl)
         movieDiv.innerHTML = `
@@ -19,13 +20,13 @@ const setMovies = (movies) => {
 
                 <h4 class= "fs-bold pt-4 pb-2 font-monospace">${movie.title}</h4>
 
-                <p class= "fs-6 fst-italic">${movie.overview.slice(0, 200)}</p>
+                <p class= "fs-6 fst-italic">${movie.overview.slice(0, 220)}</p>
                 <h6 class= "font-monospace">Popularity: ${movie.popularity}</h6>
 
                 <h6 class= "font-monospace">Release date: ${movie.release_date}</h6>
                 <button onClick="loadMovieDetails('${movie.id}')" class="btn btn-primary p-2 pt-2 mt-2">See Movie Details</button>
             </div>
-        `
+        `;
         movieContainer.appendChild(movieDiv);
 
     }
