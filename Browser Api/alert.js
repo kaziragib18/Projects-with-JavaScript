@@ -15,3 +15,9 @@ const airStrike = () => {
             alert('Rojar that! launch order on hold');
       }
 }
+const askStatus = () => {
+     const name= prompt('what is the status report?')
+     if (name) {
+           console.log(name)
+     }
+}
