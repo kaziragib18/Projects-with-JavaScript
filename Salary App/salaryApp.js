@@ -8,7 +8,7 @@ const formatChartData = function (data) {
   const chartItems = getChartItems(data);
 
   const dataWithUniqueName = uniquifyNames(chartItems);
-
+ 
   return [
     {
       key: "unnecessary data",
@@ -88,7 +88,7 @@ function addRecordHandler() {
     return;
   }
 
-  addRecord(name, !salary);
+  addRecord(name, salary); //error fix !salary
 }
 
 function addRecord(name, salary) {
@@ -204,6 +204,7 @@ function longLineCode() {
 }
 
 /*
+
   bad data breaks code. Broken code needs more code to fix.
   and more code means higher job security. So, smile :)
 
@@ -220,6 +221,8 @@ function longLineCode() {
   i hate writing comment. 
   need a coffee break!
 */
+
+
 
 const uniquifyNames = function (items) {
   const uniqueNames = {};
