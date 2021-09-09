@@ -60,14 +60,14 @@ function showData(bookArray) {
 
         div.innerHTML = `
       <!-- Image -->
-        <div class="rounded overflow-hidden border border-1 p-2 m-2">
+        <div class="rounded overflow-hidden border border-1 p-3 m-3">
             <img src="${imageUrl}" class="w-100 img-fluid" alt=""/>
             <!-- Body -->
             <div class="py-2 d-flex justify-content-between align-items-center d-md-block">
                 <h5 class="card-title text-success fst-italic fs-5 pt-2">${book.title}</h5>
-                <h4 class="card-title text-danger font-monospace fw-bold fs-6 pt-2">Author: ${book.author_name}</h4>
-                <h4 class="card-title text-dark font-monospace fw-bold fs-6 pt-2">Publisher: ${book.publisher}</h4>
-                <h5 class="card-title text-success font-monospace fs-6 fw-bold pt-2">Published: ${book.publish_year}</h5>
+                <h4 class="card-title text-danger font-monospace fw-bold fs-6 pt-2">Author: ${book.author_name?.[0]}</h4>
+                <h4 class="card-title text-dark font-monospace fw-bold fs-6 pt-2">Publisher: ${book.publisher?.[0]}</h4>
+                <h5 class="card-title text-success font-monospace fs-6 fw-bold pt-2">Published: ${book.publish_year?.[0]}</h5>
             </div>
         </div>
       `;
