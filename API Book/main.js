@@ -55,19 +55,9 @@ function showData(bookArray) {
         const div = document.createElement("div");
         div.classList.add("col-md-3");
 
-        const newImageUrl = "https://covers.openlibrary.org/b/id/" + undefined + '-M.jpg';
-        
-        const imageUrl = newImageUrl?"https://img.freepik.com/free-vector/no-data-illustration-concept_108061-573.jpg?size=338&ext=jpg": "https://covers.openlibrary.org/b/id/" + book.cover_i + '-M.jpg';
-        
-    //     if (newImageUrl) {
-    //         var imageUrl = "https://img.freepik.com/free-vector/no-data-illustration-concept_108061-573.jpg?size=338&ext=jpg";
-    //         console.log(imageUrl);
-    //     }
-    // else{
-    //     var imageUrl = "https://covers.openlibrary.org/b/id/" + book.cover_i + '-M.jpg';
+        const imageUrl = "https://covers.openlibrary.org/b/id/" + book.cover_i + '-M.jpg'
+        // console.log(imageUrl);
 
-    //     console.log(imageUrl);
-    // }
         div.innerHTML = `
       <!-- Image -->
         <div class="rounded overflow-hidden border border-1 p-2 m-2">
@@ -76,7 +66,8 @@ function showData(bookArray) {
             <div class="py-2 d-flex justify-content-between align-items-center d-md-block">
                 <h5 class="card-title text-success fst-italic fs-5 pt-2">${book.title}</h5>
                 <h4 class="card-title text-danger font-monospace fw-bold fs-6 pt-2">Author: ${book.author_name}</h4>
-                <h5 class="card-title font-monospace fs-6 fw-bold pt-2">Published: ${book.publish_year}</h5>
+                <h4 class="card-title text-dark font-monospace fw-bold fs-6 pt-2">Publisher: ${book.publisher}</h4>
+                <h5 class="card-title text-success font-monospace fs-6 fw-bold pt-2">Published: ${book.publish_year}</h5>
             </div>
         </div>
       `;

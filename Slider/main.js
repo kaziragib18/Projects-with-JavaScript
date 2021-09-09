@@ -37,14 +37,17 @@ const getImages = (query) => {
 
 let slideIndex = 0;
 const selectItem = (event, img) => {
-      let element = event.target;
-      element.classList.add('added');
+      let element = event.target; //image element
+      element.classList.add('added'); //select border 
 
       let item = sliders.indexOf(img);
+
       if (item === -1) {
             sliders.push(img);
       } else {
-            alert('Hey, Already added !')
+            //add filter to remove element from array
+            element.classList.remove('added'); //remove selected img & border
+            // alert('Hey, Already added !')
       }
 }
 var timer
