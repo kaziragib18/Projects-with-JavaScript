@@ -25,7 +25,7 @@ numbers.push(99);
 numbers.push(100);
 
 //create a new array from an older array and add an element
-const currentNumbers = [...numbers, 20];
+const currentNumbers = [...numbers, 20]; 
 
 console.log(numbers);
 console.log(newNumbers);
