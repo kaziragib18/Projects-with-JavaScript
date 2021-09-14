@@ -13,7 +13,7 @@ searchBtn.addEventListener('click', function () {
     }
     //if searchfield constains special caratcters then
     else if (searchText.includes('$') || searchText.includes('!') || searchText.includes('#') || searchText.includes('`') || searchText.includes('/') || searchText.includes('+') || searchText.includes('=') || searchText.includes('-') || searchText.includes(';')
-        || searchText.includes('.')) {
+        || searchText.includes('.')  || searchText.includes(',') || searchText.includes('[') || searchText.includes(']')) { 
 
         errorDiv.innerText = 'No Result Found!'
     }
@@ -23,7 +23,6 @@ searchBtn.addEventListener('click', function () {
         const url = `https://openlibrary.org/search.json?q=${searchText}`;
         // console.log(searchText);
         // console.log(url);
-
         fetch(url)
             .then((res) => res.json())
             .then((data) => {
