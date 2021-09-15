@@ -4,6 +4,15 @@ const bookContainer = document.getElementById('book-container');
 const resultDetails = document.getElementById('result');
 const errorDiv = document.getElementById('error');
 
+// Search Box click on keyboard enter
+searchInput.addEventListener("keypress", function(event) {
+    // event.preventDefault();
+    if (event.key == 'Enter'){
+        searchBtn.click();
+    }
+    
+});
+
 
 searchBtn.addEventListener('click', function () {
     const searchText = searchInput.value;

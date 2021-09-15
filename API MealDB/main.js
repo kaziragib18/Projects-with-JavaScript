@@ -1,3 +1,16 @@
+const searchBtn = document.getElementById("button-search");
+const searchInput = document.getElementById("search-field");
+
+// Search Box click on keyboard enter
+searchInput.addEventListener("keypress", function(event) {
+    // event.preventDefault();
+    if (event.key == 'Enter'){
+        searchBtn.click();
+    }
+    
+});
+
+
 document.getElementById('error-message').style.display = 'none';
 const searchFood = () => {
     const searchField = document.getElementById('search-field');
@@ -33,11 +46,12 @@ const displaySearchResult = meals => {
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
-        <div onclick="loadMealDetail(${meal.idMeal})" class="card h-100">
-            <img src="${meal.strMealThumb}" class="card-img-top" alt="...">
+        <div onclick="loadMealDetail(${meal.idMeal})" class="card w-75 h-100">
+            <img src="${meal.strMealThumb}" class="card-img-top w-90" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${meal.strMeal}</h5>
-                <p class="card-text">${meal.strInstructions.slice(0, 200)}</p>
+                <h5 class="card-title fs-5 fw-bold fst-italic text-success">${meal.strMeal}</h5>
+                <h5 class="card-title fs-5 fw-bold fst-italic text-danger"><span class="text-success">Catagory: </span>${meal.strArea}</h5>
+                <p class="card-text fs-6 fw-normal fst-italic text-dark">${meal.strInstructions.slice(0, 200)}</p>
             </div>
         </div>
         `;
