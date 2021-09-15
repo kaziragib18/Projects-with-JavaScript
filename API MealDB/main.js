@@ -10,7 +10,6 @@ searchInput.addEventListener("keypress", function(event) {
     
 });
 
-
 document.getElementById('error-message').style.display = 'none';
 const searchFood = () => {
     const searchField = document.getElementById('search-field');
