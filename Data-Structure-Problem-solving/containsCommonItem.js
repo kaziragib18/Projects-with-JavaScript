@@ -50,7 +50,7 @@ function containsCommonItem2(arr1, arr2) {
 //O(a) Space Complexity
 
 // containsCommonItem2(array1, array2)
-
+//build in js es6 methods
 function containsCommonItem3(arr1, arr2) {
   return arr1.some(item => arr2.includes(item))
 }
