@@ -6,8 +6,7 @@
 // Output: [0,1]
 
 // Brute force:
-// time Complexity: O(n)
-// space Complexity: O(1)
+
 var twoSum = function (nums, target) {
   for (var i = 0; i < nums.length; i++) {
     for (var j = i + 1; j < nums.length; j++) {
@@ -17,3 +16,5 @@ var twoSum = function (nums, target) {
     }
   }
 };
+// time Complexity: O(n^2)
+// space Complexity: O(1)
