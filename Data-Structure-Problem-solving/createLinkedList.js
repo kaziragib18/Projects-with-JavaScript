@@ -13,6 +13,7 @@
 //   }
 // }
 
+//Singly linked list
 class LinkedList {
   constructor(value) {
     this.head = {
@@ -60,7 +61,7 @@ class LinkedList {
       value: value,
       next: null
     };
-    const leader = this.traverseToIndex(index - 1)
+    const leader = this.traverseToIndex(index - 1);
     const holdingPointer = leader.next;
     leader.next = newNode;
     newNode.next = holdingPointer;
@@ -76,6 +77,13 @@ class LinkedList {
     }
     return currentNode;
   }
+  delete(index) {
+    const leader = this.traverseToIndex(index - 1);
+    const unwantedNode = leader.next;
+    leader.next = unwantedNode.next;
+    this.length--;
+    return this.printList();
+  }
 }
 
 const myLinkedList = new LinkedList(10);
@@ -84,4 +92,5 @@ myLinkedList.append(16);
 myLinkedList.prepend(1);
 myLinkedList.insert(2, 99);
 myLinkedList.insert(22, 54);
+myLinkedList.delete(2);
 myLinkedList.printList();
