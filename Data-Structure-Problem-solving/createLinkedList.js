@@ -84,6 +84,28 @@ class LinkedList {
     this.length--;
     return this.printList();
   }
+  reverse() {
+    //check params
+    if (!this.head.next) {
+      return this.head;
+    }
+    //printlist: [1, 10, 16, 88] 
+    let first = this.head; // grab 1
+    this.tail = this.head; // after line 106, now tail is now 1
+    let second = first.next; // grab 10
+
+    //printlist: [1, 10, 16, 88] 
+
+    while (second) { //if second node exists or has a value
+      const temp = second.next; //new reference that hold 16
+      second.next = first; // 10 points to first means 1
+      first = second; //the var first which was head becomes 10
+      second = temp; // second becomes 16
+    }
+    this.head.next = null; //1 points to null
+    this.head = first; //88
+    return this.printList()
+  }
 }
 
 const myLinkedList = new LinkedList(10);
