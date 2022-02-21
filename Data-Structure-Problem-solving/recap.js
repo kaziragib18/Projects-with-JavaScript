@@ -13,7 +13,7 @@ let myMax = findMax(myArr);
 console.log("So the maximum number is:");
 console.log(myMax);
 
-//Snallest number in an array
+//Smallest number in an array
 function findMin(arr) {
     let min = arr[0];
     for (let i = 0; i < arr.length; i++) {
@@ -102,7 +102,19 @@ for (let i = 0; i < n; i++) {
 // console.log("*****ALL ARRAY CONTENT*****");
 // console.log(myArr);
 
+const person = {
+    fName: "kazi",
+    lName: "Ragib",
+    age: 24,
+    fullName: function () {
+        return this.fName + " " + this.lName;
 
+    },
+    getFullName: function () {
+        return this.fullName()
+    }
+}
 
+console.log(person.getFullName);
 
 
