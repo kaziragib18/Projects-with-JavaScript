@@ -5,7 +5,7 @@ function findLongestWord(str) {
 
   var longest = "";
 
-  // for(var i =0; i<words.length; i++){
+  // for(var i = 0; i < words.length; i++){
   //   console.log(words[i])
   // }
   //this loop goes over the indexes
