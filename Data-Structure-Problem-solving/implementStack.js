@@ -1,3 +1,5 @@
+// Implement stack with linked list 
+
 class Node {
   constructor(value) {
     this.value = value;
@@ -12,7 +14,7 @@ class Stack {
     this.length = 0;
   }
   peek() {
-    return this.pop;
+    return this.top;
   }
   push(value) {
     const newNode = new Node(value);
